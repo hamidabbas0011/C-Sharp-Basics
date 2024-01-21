@@ -26,7 +26,11 @@ namespace OldStyleApps
             SwitchCaseExample(dayName);
  
             */
-            BreakAndContinue(0);
+
+            Console.WriteLine("Please enter a number to check if the number is Armstrong or not");
+            int num = int.Parse(Console.ReadLine());
+            Armstrong(num);
+            //BreakAndContinue(0);
         }
 
         public static void BreakAndContinue(int i)
@@ -109,6 +113,30 @@ namespace OldStyleApps
             return (num1 + num2);
         }
 
-        //
+        //This method checks if the number is Armstrong number or not
+        public static void Armstrong(int num)
+        {
+            int rem;
+            int sum = 0;
+            int temp;
+            temp = num;
+
+            while (num>0)
+            {
+                rem = num % 10;
+                sum = sum + (rem * rem * rem);
+                num = num / 10;
+            }
+            if (sum == temp)
+            {
+
+                Console.WriteLine("It is an Armstrong Number");
+            }
+            else
+            {
+                Console.WriteLine("It is not an Armstrong Number");
+            }
+            // Console.Read();
+        }
     }
 }
